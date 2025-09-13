@@ -44,16 +44,16 @@ public class Work2 {
         }
         System.out.println("Խնդիր 5");
         for (int i = 0; i < n; i++) {
-            for (int s = 0; s < n - 1 - i; s++) {
+            for (int j = 0; j < n - 1 - i; j++) {
                 System.out.print(" ");
             }
-            for (int յ = 0; յ < i + 1; յ++) {
+            for (int j = 0; j < i + 1; j++) {
                 System.out.print(" *");
             }
             System.out.println();
         }
         for (int i = n - 2; i >= 0; i--) {
-            for (int յ = 0; յ < n - 1 - i; յ++) {
+            for (int j = 0; j < n - 1 - i; j++) {
                 System.out.print(" ");
             }
             for (int j = 0; j < i + 1; j++) {
