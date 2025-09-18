@@ -1,4 +1,6 @@
-public class Work1 {
+package work;
+
+public class HomeWork1 {
     public static void main(String[] args) {
 
         int x = 10;

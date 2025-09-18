@@ -1,4 +1,6 @@
-public class Work2 {
+package work;
+
+public class FigurePainter {
 
 
     public static void main(String[] args) {
