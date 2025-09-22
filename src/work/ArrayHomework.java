@@ -25,14 +25,12 @@ public class ArrayHomework {
 
         System.out.println("Խնդիր 2");
 
-        int firstValue = 0;
-        int lastValue = 0;
+        int firstIndex = 0;
 
         for (int i = 0; i < numbers.length / 2; i++) {
-            firstValue = numbers[i];
-            lastValue = numbers[numbers.length - 1 - i];
-            numbers[numbers.length - 1 - i] = firstValue;
-            numbers[i] = lastValue;
+            firstIndex = numbers[i];
+            numbers[i] = numbers[numbers.length - 1 - i];
+            numbers[numbers.length - 1 - i] = firstIndex;
         }
         System.out.println("Մասիվի արժեքների հակառակ դասավորվածությունը \n" + Arrays.toString(numbers));
 
@@ -57,6 +55,7 @@ public class ArrayHomework {
             }
         }
         System.out.println("Մասիվում կրկնվող արժեքներները " + count + "-ն են");
+
 
         System.out.println("Խնդիր 4");
 
