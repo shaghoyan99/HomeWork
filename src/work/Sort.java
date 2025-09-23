@@ -9,6 +9,8 @@ public class Sort {
     public static void main(String[] args) {
 
         int[] array = {4, 71, 3, 9, 0, 2};
+        System.out.println(Arrays.toString(array));
+
 
         int temp;
         int count;
