@@ -4,13 +4,10 @@ import java.util.Arrays;
 
 public class Sort {
 
-
-
-    public static void main(String[] args) {
+    public static void main(String[] ars) {
 
         int[] array = {4, 71, 3, 9, 0, 2};
         System.out.println(Arrays.toString(array));
-
 
         int temp;
         int count;
