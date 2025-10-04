@@ -7,7 +7,7 @@ public class DynamicArrayDemo {
             dynamicArray.add(i);
         }
         dynamicArray.print();
-        System.out.println(dynamicArray.getByIndex(14));
+        System.out.println(dynamicArray.getByIndex(7));
         System.out.println(dynamicArray.getByIndex(15));
 
 
