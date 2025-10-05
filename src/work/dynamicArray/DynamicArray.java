@@ -16,17 +16,17 @@ public class DynamicArray {
 
     private void extend() {
         int[] longArray = new int[array.length + 10];
-        for (int i = 0; i <= size; i++) {
+        for (int i = 0; i < array.length; i++) {
             longArray[i] = array[i];
         }
         array = longArray;
     }
 
     public int getByIndex(int index) {
-        if (index >= 0 && index < size) {
-            return array[index];
+        if (index < 0 || index > size) {
+            return -1;
         }
-        return -1;
+        return array[index];
     }
 
     public void print() {
