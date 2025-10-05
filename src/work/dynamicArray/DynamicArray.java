@@ -1,11 +1,18 @@
 package work.dynamicArray;
 
-import java.util.Arrays;
 
 public class DynamicArray {
 
-    private int[] array = new int[10];
+    private int[] array;
     private int size = 0;
+
+    public DynamicArray() {
+        array = new int[10];
+    }
+
+    public DynamicArray(int defaultLength) {
+        array = new int[defaultLength];
+    }
 
     public void add(int value) {
         if (size == array.length - 1) {
