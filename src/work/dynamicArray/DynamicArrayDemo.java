@@ -8,19 +8,12 @@ public class DynamicArrayDemo {
         dynamicArray.add(5);
         dynamicArray.add(9);
         dynamicArray.add(8);
-        dynamicArray.add(78);
         dynamicArray.add(7);
         dynamicArray.add(7);
         dynamicArray.print();
-        dynamicArray.deleteByIndex(0);
+        dynamicArray.add(2,7);
         dynamicArray.print();
-        dynamicArray.set(1,1);
-        System.out.println(dynamicArray.getByIndex(4));
-        resultValue = dynamicArray.exists(7);
-        System.out.println(resultValue);
-
-        indexByValue = dynamicArray.getIndexByValue(7);
-        System.out.println(indexByValue);
+        dynamicArray.deleteByIndex(2);
         dynamicArray.print();
 
 

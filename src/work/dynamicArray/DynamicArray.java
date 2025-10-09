@@ -24,37 +24,42 @@ public class DynamicArray {
     public void add(int index, int value) {
         if (index < 0 || index > size) {
             System.out.println(index + " ինդեքսով էլեմենտ չկա մասիվում․ ");
-        } else {
-            array[index] = value;
-            System.out.println("Տվյալ " + index + "-ի արժեքը փոփոխվեց․ ");
+            return;
         }
+        if (size == array.length) {
+            extend();
+        }
+        for (int i = size; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = value;
+        size++;
     }
+
 
     public void deleteByIndex(int index) {
         if (index < 0 || index > size) {
             System.out.println(index + " ինդեքսով էլեմենտ չկա մասիվում․ ");
-        } else {
-            for (int i = index; i < size; i++) {
-                array[i] = array[i + 1];
-            }
-            size--;
+            return;
         }
+        for (int i = index; i < size - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        size--;
     }
+
 
     public void set(int index, int value) {
         if (index < 0 || index >= size) {
             System.out.println(index + " ինդեքսով էլեմենտ չկա մասիվում․ ");
-        } else {
-            array[index] = value;
+            return;
         }
-
+        array[index] = value;
     }
 
     private void extend() {
         int[] longArray = new int[array.length + 10];
-        for (int i = 0; i < array.length; i++) {
-            longArray[i] = array[i];
-        }
+        System.arraycopy(array, 0, longArray, 0, array.length);
         array = longArray;
     }
 
@@ -74,24 +79,15 @@ public class DynamicArray {
         return false;
     }
 
-    public int getIndexByValue(int value) {
-        int indexByValue = -1;
-        int count = 0;
+    public int getIndexByValue(int value) {;
         for (int i = 0; i < size; i++) {
             if (array[i] == value) {
-                count++;
-                if (count > 1) {
-                    return indexByValue;
-                }
-                indexByValue = i;
+                return i;
             }
         }
-        if (indexByValue < 0 || indexByValue > size) {
-            return -1;
-        } else {
-            return indexByValue;
-        }
+        return -1;
     }
+
 
     public void print() {
         for (int i = 0; i < size; i++) {
