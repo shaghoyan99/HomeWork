@@ -30,7 +30,9 @@ public class Stack {
         return array[size--];
     }
 
-    public int arraySize() {
-        return size;
+    public boolean isEmpty() {
+        boolean isEmpty;
+        if (size == -1) return true;
+        return false;
     }
 }
