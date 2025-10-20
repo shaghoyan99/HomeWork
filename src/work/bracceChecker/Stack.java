@@ -32,7 +32,9 @@ public class Stack {
 
     public boolean isEmpty() {
         boolean isEmpty;
-        if (size == -1) return true;
+        if (size == -1) {
+            return true;
+        }
         return false;
     }
 }

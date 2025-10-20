@@ -1,6 +1,6 @@
 package work.bracceChecker;
 
-public class BraceChecker extends Stack {
+public class BraceChecker  {
 
     private final String text;
     private final Stack stack = new Stack();
@@ -27,7 +27,9 @@ public class BraceChecker extends Stack {
                         break;
                     }
                     char pop = stack.pop();
-                    if (pop == '(' && ch == ')' || pop == '{' && ch == '}' || pop == '[' && ch == ']') {
+                    if (pop == '(' && ch == ')' ||
+                            pop == '{' && ch == '}' ||
+                            pop == '[' && ch == ']') {
                         System.out.println("It is true: opened " + pop + " closed " + ch + " at " + i);
                     } else {
                         System.out.println("Error: opened " + pop + " but closed " + ch + " at " + i);
@@ -35,8 +37,9 @@ public class BraceChecker extends Stack {
                     break;
             }
         }
-        if (!stack.isEmpty()){
+        if (!stack.isEmpty()) {
             System.out.println("Error: brackets are not closed");
         }
     }
 }
+

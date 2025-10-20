@@ -54,7 +54,7 @@ public class ArrayUtil {
         for (int i = 0; i < numbers.length; i++) {
             if ((numbers[i] % 2) == 0) {
                 couple++;
-            }else {
+            } else {
                 odd++;
             }
         }

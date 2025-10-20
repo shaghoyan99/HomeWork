@@ -9,7 +9,6 @@ public class DynamicArray {
     public DynamicArray() {
         array = new int[10];
     }
-
     public DynamicArray(int defaultLength) {
         array = new int[defaultLength];
     }

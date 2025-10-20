@@ -20,7 +20,7 @@ public class ArrayHomework {
         if (nCount == 0) {
             System.out.println(n + "թիվը չկա մասիվում");
         } else {
-            System.out.println(n + " թիվից մացիվում կա " + nCount + " հատ");
+            System.out.println(n + " թիվից մասիվում կա " + nCount + " հատ");
         }
 
         System.out.println("Խնդիր 2");
@@ -65,6 +65,7 @@ public class ArrayHomework {
             for (int j = 0; j < vowel.length; j++) {
                 if (chars[i] == vowel[j]) {
                     too++;
+
                 }
             }
         }
