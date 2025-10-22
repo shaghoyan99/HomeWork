@@ -99,7 +99,6 @@ public class BookStorage {
             return;
         }
         for (int i = index; i < size; i++) {
-            books[i].setId(books[i + 1].getId());
             books[i] = books[i + 1];
         }
         size--;
