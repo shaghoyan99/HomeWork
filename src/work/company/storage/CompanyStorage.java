@@ -7,17 +7,22 @@ public class CompanyStorage {
 
     private Company[] companies;
     private int size;
+    private String formatId;
+    private int id;
 
-    public CompanyStorage(){
+    public CompanyStorage() {
         companies = new Company[10];
+        formatId = "A00";
+        id = 1;
     }
 
-    public void addCompany(Company company){
-        if (size == companies.length){
+    public void addCompany(Company company) {
+        if (size == companies.length) {
             extend();
         }
+        company.setIdCompany(formatId + id++);
         for (int i = 0; i < size; i++) {
-            if (company.getIdCompany().equals(companies[i].getIdCompany())){
+            if (company.getIdCompany().equals(companies[i].getIdCompany())) {
                 System.out.println("Id has been repeated, Please change Id !!!");
                 return;
             }
@@ -26,8 +31,8 @@ public class CompanyStorage {
     }
 
     private void extend() {
-        Company[] tmp = new Company[companies.length+10];
-        System.arraycopy(companies,0,tmp,0,size);
+        Company[] tmp = new Company[companies.length + 10];
+        System.arraycopy(companies, 0, tmp, 0, size);
         companies = tmp;
     }
 
@@ -36,14 +41,14 @@ public class CompanyStorage {
             for (int i = 0; i < size; i++) {
                 System.out.println(companies[i]);
             }
-        }else {
+        } else {
             System.out.println("No company added");
         }
     }
 
     public Company getCompanyById(String idCompany) throws CompanyNotFoundException {
         for (int i = 0; i < size; i++) {
-            if (companies[i].getIdCompany().equals(idCompany)){
+            if (companies[i].getIdCompany().equals(idCompany)) {
                 return companies[i];
             }
         }

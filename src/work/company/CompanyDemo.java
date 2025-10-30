@@ -37,23 +37,23 @@ public class CompanyDemo implements Commands {
                     employeeStorage.print();
                     break;
                 case SEARCH_EMPLOYEE_BY_COMPANY_NAME:
-                    empByNameCompany();
+                    getEmployeesByCompanyName();
                     break;
                 case SEARCH_EMPLOYEE_BY_ID_COMPANY:
-                    empByIdCompany();
+                    getEmployeesByCompanyId();
                     break;
             }
         }
     }
 
-    private static void empByNameCompany() {
+    private static void getEmployeesByCompanyName() {
         System.out.println("Please input Company Name ");
         companyStorage.print();
         String nameCompany = scanner.nextLine();
         employeeStorage.searchEmployeeByNameCompany(nameCompany);
     }
 
-    private static void empByIdCompany() {
+    private static void getEmployeesByCompanyId() {
         System.out.println("Please input Company ID ");
         companyStorage.print();
         String idCompany = scanner.nextLine();
@@ -64,9 +64,7 @@ public class CompanyDemo implements Commands {
     private static void addCompany() {
         System.out.println("Please input Company name ");
         String name = scanner.nextLine();
-        System.out.println("Please input Company ID ");
-        String idCompany = scanner.nextLine();
-        Company company = new Company(name, idCompany);
+        Company company = new Company(name);
         companyStorage.addCompany(company);
         System.out.println("Company was added !!!");
     }
