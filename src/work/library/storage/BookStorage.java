@@ -1,6 +1,7 @@
 package work.library.storage;
 
 
+import work.library.model.Author;
 import work.library.model.Book;
 
 public class BookStorage {
@@ -11,7 +12,6 @@ public class BookStorage {
 
     public BookStorage() {
         books = new Book[10];
-        size = -1;
         id = 1;
     }
 
@@ -20,7 +20,7 @@ public class BookStorage {
             extend();
         }
         book.setId(id++);
-        books[++size] = book;
+        books[size++] = book;
     }
 
     private void extend() {
@@ -33,7 +33,7 @@ public class BookStorage {
         if (size == -1) {
             System.err.println("There are no books");
         }
-        for (int i = 0; i <= size; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.println(books[i]);
         }
     }
@@ -44,7 +44,7 @@ public class BookStorage {
         }
         double price = 0;
         int maxIndex = -1;
-        for (int i = 0; i <= size; i++) {
+        for (int i = 0; i < size; i++) {
             if (books[i].getPrice() > price) {
                 price = books[i].getPrice();
                 maxIndex = i;
@@ -60,6 +60,18 @@ public class BookStorage {
         }
         for (int i = 0; i <= size; i++) {
             if (books[i].getTitle().toLowerCase().contains(keyword.toLowerCase())) {
+                System.out.println(books[i]);
+            }
+        }
+    }
+
+    public void searchBookByAuthor(Author author) {
+        if (size == -1) {
+            System.out.println("There are not books");
+            return;
+        }
+        for (int i = 0; i < size; i++) {
+            if (books[i].getAuthor().equals(author)) {
                 System.out.println(books[i]);
             }
         }

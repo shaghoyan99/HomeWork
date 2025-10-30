@@ -31,7 +31,7 @@ public class HomeWork1 {
         System.out.println("Խնդիր 4");
 
         for (int a = 1; a < 11; a++) {
-            System.out.println("3 * " + a + " = " + (n * a));
+            System.out.println(n + " * " + a + " = " + (n * a));
         }
 
     }

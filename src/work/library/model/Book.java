@@ -6,21 +6,19 @@ public class Book {
 
     private int id;
     private String title;
-    private String authorName;
+    private Author author;
     private int quantity;
     private double price;
 
-
-    public Book(String title, String authorName, int quantity, double price) {
+    public Book(String title, Author author, int quantity, double price) {
         this.title = title;
-        this.authorName = authorName;
+        this.author = author;
         this.quantity = quantity;
         this.price = price;
     }
 
     public Book() {
     }
-
 
     public int getId() {
         return id;
@@ -38,12 +36,12 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthorName() {
-        return authorName;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public int getQuantity() {
@@ -66,12 +64,12 @@ public class Book {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return id == book.id && quantity == book.quantity && Double.compare(price, book.price) == 0 && Objects.equals(title, book.title) && Objects.equals(authorName, book.authorName);
+        return id == book.id && quantity == book.quantity && Double.compare(price, book.price) == 0 && Objects.equals(title, book.title) && Objects.equals(author, book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, authorName, quantity, price);
+        return Objects.hash(id, title, author, quantity, price);
     }
 
     @Override
@@ -79,7 +77,7 @@ public class Book {
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", authorName='" + authorName + '\'' +
+                ", author=" + author +
                 ", quantity=" + quantity +
                 ", price=" + price +
                 '}';
