@@ -4,6 +4,7 @@ import work.company.exception.CompanyNotFoundException;
 import work.company.exception.PositionNotFoundException;
 import work.company.models.Company;
 import work.company.models.Employee;
+import work.company.models.PositionLevel;
 import work.company.storage.CompanyStorage;
 import work.company.storage.EmployeeStorage;
 

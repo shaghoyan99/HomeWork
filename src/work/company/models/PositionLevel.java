@@ -1,4 +1,4 @@
-package work.company;
+package work.company.models;
 
 public enum PositionLevel {
 

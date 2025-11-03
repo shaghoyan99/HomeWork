@@ -1,7 +1,5 @@
 package work.company.models;
 
-import work.company.PositionLevel;
-
 import java.util.Objects;
 
 public class Employee {

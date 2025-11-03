@@ -1,7 +1,6 @@
 package work.company.storage;
 
-import work.company.Commands;
-import work.company.PositionLevel;
+import work.company.models.PositionLevel;
 import work.company.models.Employee;
 
 public class EmployeeStorage {
