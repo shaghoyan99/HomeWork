@@ -20,7 +20,7 @@ public class CompanyDemo implements Commands {
         boolean isRun = true;
 
         while (isRun) {
-            Commands.commands();
+            Commands.printMainMenu();
             String command = scanner.nextLine();
             switch (command) {
                 case EXIT:
@@ -51,11 +51,11 @@ public class CompanyDemo implements Commands {
     }
 
     private static void getEmployeesByPositionLevel() {
-        Commands.commandsPositionLevel();
+        Commands.printPositionLevelMenu();
         String position = scanner.nextLine();
         try {
-            PositionLevel positionLevel = positionLevel(position);
-            employeeStorage.searchEmployeeByPositionLevel(positionLevel);
+            PositionLevel level = PositionLevel.fromCode(position);
+            employeeStorage.searchEmployeeByPositionLevel(level);
         } catch (PositionNotFoundException e) {
             System.out.println(e.getMessage());
         }
@@ -97,24 +97,14 @@ public class CompanyDemo implements Commands {
             String surname = scanner.nextLine();
             System.out.println("Please input salary ");
             double salary = Double.parseDouble(scanner.nextLine());
-            Commands.commandsPositionLevel();
+            Commands.printPositionLevelMenu();
             String position = scanner.nextLine();
-            PositionLevel positionLevel = positionLevel(position);
+            PositionLevel positionLevel = PositionLevel.fromCode(position);
             Employee employee = new Employee(name, surname, salary, company,positionLevel);
             employeeStorage.addEmployee(employee);
             System.out.println("Employee was added !!!");
         } catch (CompanyNotFoundException | PositionNotFoundException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    public static PositionLevel positionLevel (String position) throws PositionNotFoundException {
-        return switch (position) {
-            case JUNIOR -> PositionLevel.JUNIOR;
-            case MIDDLE -> PositionLevel.MIDDLE;
-            case SENIOR -> PositionLevel.SENIOR;
-            case LEAD -> PositionLevel.LEAD;
-            default -> throw new PositionNotFoundException("Position with " + position + "  does not exist!!!");
-        };
     }
 }

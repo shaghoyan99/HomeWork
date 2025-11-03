@@ -15,7 +15,7 @@ public interface Commands {
     String SENIOR = "3";
     String LEAD = "4";
 
-     static void commands() {
+     static void printMainMenu() {
         System.out.println("Please input " + EXIT + " for exit");
         System.out.println("Please input " + ADD_COMPANY + " for added company");
         System.out.println("Please input " + ADD_EMPLOYEE + " for added employee");
@@ -26,7 +26,7 @@ public interface Commands {
         System.out.println("Please input " + SEARCH_EMPLOYEES_BY_POSITION_LEVEL + " for search employee by position level");
     }
 
-    static void commandsPositionLevel() {
+    static void printPositionLevelMenu() {
         System.out.println("Please select position level ");
         System.out.println("Please input " + JUNIOR + " for Junior");
         System.out.println("Please input " + MIDDLE + " for Middle");
