@@ -1,5 +1,7 @@
 package work.company.models;
 
+import work.company.PositionLevel;
+
 import java.util.Objects;
 
 public class Employee {
@@ -8,15 +10,14 @@ public class Employee {
     private String surname;
     private double salary;
     private Company company;
-    private String position;
+    private PositionLevel positionLevel;
 
-
-    public Employee(String name, String surname, double salary, Company company, String position) {
+    public Employee(String name, String surname, double salary, Company company, PositionLevel positionLevel) {
         this.name = name;
         this.surname = surname;
         this.salary = salary;
         this.company = company;
-        this.position = position;
+        this.positionLevel = positionLevel;
     }
 
     public Employee() {
@@ -54,24 +55,24 @@ public class Employee {
         this.company = company;
     }
 
-    public String getPosition() {
-        return position;
+    public PositionLevel getPositionLevel() {
+        return positionLevel;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setPositionLevel(PositionLevel positionLevel) {
+        this.positionLevel = positionLevel;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Double.compare(salary, employee.salary) == 0 && Objects.equals(name, employee.name) && Objects.equals(surname, employee.surname) && Objects.equals(company, employee.company) && Objects.equals(position, employee.position);
+        return Double.compare(salary, employee.salary) == 0 && Objects.equals(name, employee.name) && Objects.equals(surname, employee.surname) && Objects.equals(company, employee.company) && positionLevel == employee.positionLevel;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, salary, company, position);
+        return Objects.hash(name, surname, salary, company, positionLevel);
     }
 
     @Override
@@ -81,7 +82,7 @@ public class Employee {
                 ", surname='" + surname + '\'' +
                 ", salary=" + salary +
                 ", company=" + company +
-                ", position='" + position + '\'' +
+                ", positionLevel=" + positionLevel +
                 '}';
     }
 }

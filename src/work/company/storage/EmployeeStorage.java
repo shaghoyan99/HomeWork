@@ -1,5 +1,7 @@
 package work.company.storage;
 
+import work.company.Commands;
+import work.company.PositionLevel;
 import work.company.models.Employee;
 
 public class EmployeeStorage {
@@ -50,6 +52,18 @@ public class EmployeeStorage {
         if (size != -1) {
             for (int i = 0; i < size; i++) {
                 if (employees[i].getCompany().getName().equalsIgnoreCase(nameCompany)) {
+                    System.out.println(employees[i]);
+                }
+            }
+        } else {
+            System.out.println("No employee added");
+        }
+    }
+
+    public void searchEmployeeByPositionLevel(PositionLevel positionLevel) {
+        if (size != -1) {
+            for (int i = 0; i < size; i++) {
+                if (employees[i].getPositionLevel().equals(positionLevel)) {
                     System.out.println(employees[i]);
                 }
             }
