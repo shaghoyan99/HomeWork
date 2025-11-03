@@ -1,5 +1,7 @@
 package work.company;
 
+import static work.company.models.PositionLevel.*;
+
 public interface Commands {
     String EXIT = "0";
     String ADD_COMPANY = "1";
@@ -9,11 +11,6 @@ public interface Commands {
     String SEARCH_EMPLOYEE_BY_ID_COMPANY = "5";
     String SEARCH_EMPLOYEE_BY_COMPANY_NAME = "6";
     String SEARCH_EMPLOYEES_BY_POSITION_LEVEL = "7";
-
-    String JUNIOR = "1";
-    String MIDDLE = "2";
-    String SENIOR = "3";
-    String LEAD = "4";
 
      static void printMainMenu() {
         System.out.println("Please input " + EXIT + " for exit");
