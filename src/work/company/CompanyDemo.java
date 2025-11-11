@@ -16,7 +16,7 @@ public class CompanyDemo implements Commands {
     private static final EmployeeStorage employeeStorage = new EmployeeStorage();
     private static final Scanner scanner = new Scanner(System.in);
 
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         boolean isRun = true;
 
         while (isRun) {
@@ -100,7 +100,7 @@ public class CompanyDemo implements Commands {
             Commands.printPositionLevelMenu();
             String position = scanner.nextLine();
             PositionLevel positionLevel = PositionLevel.fromCode(position);
-            Employee employee = new Employee(name, surname, salary, company,positionLevel);
+            Employee employee = new Employee(name, surname, salary, company, positionLevel);
             employeeStorage.addEmployee(employee);
             System.out.println("Employee was added !!!");
         } catch (CompanyNotFoundException | PositionNotFoundException e) {
