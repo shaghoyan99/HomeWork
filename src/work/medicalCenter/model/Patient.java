@@ -1,17 +1,20 @@
 package work.medicalCenter.model;
 
-import java.time.LocalDateTime;
+import work.medicalCenter.util.DateUtil;
+
+import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
-public class Patient extends Person {
+public class Patient extends Person implements Serializable {
 
     private Doctor doctor;
-    private LocalDateTime registerDateTime;
+    private Date registerDateTime;
 
     public Patient(int id, String name, String surname, String phoneNumber, Doctor doctor) {
         super(id, name, surname, phoneNumber);
         this.doctor = doctor;
-        this.registerDateTime = LocalDateTime.now();
+        this.registerDateTime = new Date();
     }
 
     public Doctor getDoctor() {
@@ -22,11 +25,11 @@ public class Patient extends Person {
         this.doctor = doctor;
     }
 
-    public LocalDateTime getRegisterDateTime() {
+    public Date getRegisterDateTime() {
         return registerDateTime;
     }
 
-    public void setRegisterDateTime(LocalDateTime registerDateTime) {
+    public void setRegisterDateTime(Date registerDateTime) {
         this.registerDateTime = registerDateTime;
     }
 
@@ -48,7 +51,7 @@ public class Patient extends Person {
         return "Patient{" +
                 super.toString() +
                 "doctor=" + doctor +
-                ", registerDateTime=" + registerDateTime +
+                ", registerDateTime=" + DateUtil.fromDateToStr(registerDateTime) +
                 '}';
     }
 }

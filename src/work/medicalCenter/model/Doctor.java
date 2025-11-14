@@ -1,8 +1,9 @@
 package work.medicalCenter.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Doctor extends Person {
+public class Doctor extends Person implements Serializable {
 
     private String email;
     private Profession profession;
