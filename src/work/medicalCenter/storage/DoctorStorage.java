@@ -76,8 +76,8 @@ public class DoctorStorage implements Serializable {
     }
 
     public void printAllDoctors() {
-        for (Doctor doctor : doctors) {
-            System.out.println(doctor);
+        for (int i = 0; i < size; i++) {
+            System.out.println(doctors[i]);
         }
     }
 }

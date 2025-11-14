@@ -42,9 +42,9 @@ public abstract class FillUtil {
                 return doctorStorage;
             }
         } catch (FileNotFoundException e) {
-            System.out.println("File not found for Doctor Data" + e);
+            System.out.println("File not found for Doctor Data " + e);
         } catch (IOException e) {
-            System.out.println("Failed to Deserialize Doctor Data" + e);
+            System.out.println("Failed to Deserialize Doctor Data " + e);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -58,9 +58,9 @@ public abstract class FillUtil {
                 return patientStorage;
             }
         } catch (FileNotFoundException e) {
-            System.out.println("File not found for Patient Data" + e);
+            System.out.println("File not found for Patient Data " + e);
         } catch (IOException e) {
-            System.out.println("Failed to Deserialize Patient Data" + e);
+            System.out.println("Failed to Deserialize Patient Data " + e);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

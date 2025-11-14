@@ -48,9 +48,9 @@ public class Patient extends Person implements Serializable {
 
     @Override
     public String toString() {
-        return "Patient{" +
+        return "Patient {" +
                 super.toString() +
-                "doctor=" + doctor +
+                " doctor= " + doctor +
                 ", registerDateTime=" + DateUtil.fromDateToStr(registerDateTime) +
                 '}';
     }

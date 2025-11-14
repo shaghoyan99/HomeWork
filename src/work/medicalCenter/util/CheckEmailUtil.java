@@ -12,6 +12,6 @@ public abstract class CheckEmailUtil {
     }
 
     private static boolean checkEmail(String email) {
-        return email.matches("@");
+        return email.contains("@");
     }
 }

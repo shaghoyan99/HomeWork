@@ -14,6 +14,7 @@ public class Doctor extends Person implements Serializable {
         this.profession = profession;
     }
 
+
     public String getEmail() {
         return email;
     }
